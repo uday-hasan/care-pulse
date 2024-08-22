@@ -5,6 +5,8 @@ import StatCard from "@/components/StatCard";
 import Columns from "@/components/tables/Columns";
 import DataTable from "@/components/tables/DataTable";
 import { getRecentAppointmentList } from "@/lib/actions/appointment.actions";
+import { Button } from "@/components/ui/button";
+import AdminLogout from "@/components/AdminLogout";
 
 const AdminPage = async () => {
   const appointments = await getRecentAppointmentList();
@@ -21,8 +23,10 @@ const AdminPage = async () => {
             className="h-8 w-fit"
           />
         </Link>
-
-        <p className="text-16-semibold">Admin Dashboard</p>
+        <div className="flex gap-3 items-center">
+          <p className="text-16-semibold">Admin Dashboard</p>
+          <AdminLogout />
+        </div>
       </header>
 
       <main className="admin-main">
